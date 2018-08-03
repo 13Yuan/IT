@@ -1,7 +1,7 @@
 # Nodejs
 
 ## Basic
-JS脚本语言需要解析器，浏览器（操作dom)和nodejs(操作磁盘和搭建httpserver)
+JS脚本语言需要解析器，浏览器（操作dom)和nodejs(操作磁盘和搭建httpserver)<br />
 优点：
 1. 事件机制和io特性 -> 高性能web服务器
 2. 模块：
@@ -9,10 +9,10 @@ JS脚本语言需要解析器，浏览器（操作dom)和nodejs(操作磁盘和�
     2. export   导出当前模块对象
     3. module   访问当前模块的信息，用于替换当前模块的导出对象
 3. AMD, CMD, CommonJS
----针对浏览器
-AMD: RequireJS, 预加载，执行加载对应依赖，执行顺序困扰
-CMD: SeaJS, 懒加载，遇到require才执行
----针对服务端
+---针对浏览器<br />
+AMD: RequireJS, 预加载，执行加载对应依赖，执行顺序困扰<br />
+CMD: SeaJS, 懒加载，遇到require才执行<br />
+---针对服务端<br />
 CommonJS: NodeJS
 
 ## Deploy
@@ -29,7 +29,7 @@ BOM移除等
 
 ## network
 1. http
-http.createserver
+http.createserver<br />
 linux下监听1024需要root权限，监听80或443需要sudo权限
 2. apis
     1. http 
@@ -46,7 +46,7 @@ linux下监听1024需要root权限，监听80或443需要sudo权限
     2. child_process（创建控制子进程）.spawn
     3. cluster，解决利用多核cpu问题
 3. 应用
-process.exit(1)
+process.exit(1)<br />
 process.stdout.write(), stdin, stderr
 
 ## async
