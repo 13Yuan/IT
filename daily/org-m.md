@@ -6,3 +6,10 @@ Due to this reason, I didn’t save any reference id, such as doc id. If we take
 Then back to the question of Oplog that why I need to do the comparison. The oplog data only has the new status and the reference id that we change. For example, one of the document of 541000 org id. This document has 7 identifiers, one value of its identifier is ‘a’. so we also has a key ‘a’ in Redis, right? then we change this value to b.  we need to delete the key ‘a’ and add the new key ‘b’ in Reids. Here comes the question, if oplog doesn’t contain the ‘a’ log, and MongoDB also has changed to ‘b’, how should I know to delete the key ‘a’ in Redis? This issue is also occur even though we store reference id in Redis.
 So, when we do baseline, we need a log or a backup so that we can track what it changes.
 What do you think? Or do you have any other better suggestion?
+
+
+
+
+Hi Dan, Good evening. I will explain why we need the initial status of the data although the oplog is a fixed-sized collection and would overwrite automatically. I will take my local oplog as instance. There is no record before we insert a new document. Then insert it, the oplog will add a new recode with full information of this document, you can see many identifiers. And we assume that we’ve created the related keys in Reidis, for example, mdy_debt_id-147 was included in Redis as a key. Right? What happed if we change 147 to 148? There are two steps we should do, firstly we need to delete the old key 147 and secondly create a new one 148. Right? So if we want to delete the old one, we should record this status to tell us to do. But currently we don’t have in oplog due to its fixed-sized and will automatically remove the older data. 
+My suggestion is that we can also save the first time status in our Redis if the oplog relay can’t save it while we do baseline. 
+
