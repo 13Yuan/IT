@@ -56,3 +56,61 @@ Virtual DOM -> Diff算法 -> 局部更新
     3. 分组件求异
     4. 设置key， 对element diff优化
     5. 保持稳定DOM结构，避免移动频繁
+
+
+React 生命周期
+	1. 初始化
+	willMount, Render, DidMount
+	2. 运行
+	WillRecePro, ShouldComUpdate, WillUpdate, DidUpdate
+	3. 销毁
+	Unmount
+
+react中key的作用
+	diff算法根据key来判断，减少不必要的重复渲染
+	
+setState
+	第二个参数：
+		回调函数，监听State更改
+	过程
+		合并状态，触发调和，Diff算法最小化渲染
+
+DidMount与服务器进行数据交互
+
+react性能优化
+	shouldUpdateComponent, PureComponent
+	使用prod版本react
+	使用key
+	
+虚拟Dom
+	js对象表示dom树结构，利用diff算法更新视图
+	
+diff算法
+	只比较同级元素
+	只匹配相同组件
+	合并操作，通过标记dirty
+	选择性子树渲染（shouldComponentUpdate)
+
+Refs
+	安全访问Dom
+
+Props传递
+	回调渲染模式，this.props.children(this.state.user)，父子解耦
+	
+组件
+	展示组件 (UI) & 容器组件 (Action)
+	类组件 & 函数组件
+		类组件包含生命周期，如果只接收props无状态，可以用函数组件
+	state与props
+		state可变
+		props不可变，父组件传递
+	构建
+		createClass, ES6 class, 无状态函数
+	
+事件处理
+	react没附加在子节点，使用单个事件监听所有事件，提高性能
+	
+Redux
+	Action, store, reducer
+
+缺点：子组件更新时，父组件不需要用这个组件，一样要render，影响效率
