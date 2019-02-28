@@ -20,11 +20,6 @@
 
 3. HTTP2.0
 二进制、多路复用、服务器推送，报头压缩
-http1.1问题：
-    1. 连接无服用
-    2. 线路阻塞
-    3. 协议开销大
-    4. 安全因素
 http2.0解决：
     1. 连接复用
     2. 包头压缩
@@ -91,4 +86,23 @@ http2.0解决：
 # PS
     一次性渲染几十万条数据，不卡顿
     通过requestAnimationFrame, 插入不造成回流
+
+
+1. 减少http请求（或http2)
+    压缩文件，多图合并
+2. 减少重排
+    （减少布局改变，如窗口大小，字体大小，内容改变，style属性改变）
+    css, animation, flex grid
+3. 减少DOM操作
+4. css前，body中，js后
+5. CDN加速
+    webpack external抽离共用的大文件，引用外部压缩后es5文件
+6. 精简js和css
+    webpack shrink(移除注释，额外空格，标识符替换)
+7. 压缩图片
+8. 注意cookie大小
+    减少不必要的cookie
+9. cache
+    ETag, expires
+
 
