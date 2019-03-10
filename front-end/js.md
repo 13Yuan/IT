@@ -29,4 +29,33 @@
     运行时基于执行环境绑定， 全局函数(this=window)，否则this=调用对象
 
 10. 跨域
-11. JS继承
+
+# new
+
+1. 面向对象
+    a. 创建对象
+        i. 原型方法 Property + new
+        ii. Object.create
+    b. 继承
+        ii. 原型链 
+            Person.Property = Animal.Property; Person.Property.constructor = 'Person'
+        ii. 构造器
+            function Person(){  Animal.call(this) }
+    c. 多重继承
+        i. 属性复制
+        for(prop in Animal.property) {Person.Prototype[prop] = Animal.prototype[prop]}
+2. 作用域
+    最外层函数和变量拥有全局作用域。函数作用域
+3. This
+    运行时基于执行环境绑定， 全局函数(this=window)，否则this=调用对象
+4. apply, call, bind
+    更改当前对象，apply\call直接执行，bind绑定
+5. caller, callee, arguments
+6. 闭包
+    父子函数相互引用
+
+7. Array 常用
+    split, push pop, slice, concat, sort, map, filter
+8. string 常用
+    indexOf, Split, Slice, substr
+    
