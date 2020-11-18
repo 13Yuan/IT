@@ -50,7 +50,8 @@
         节点无状态化，可伸缩性
 3. 缓存架构
     1. 浏览器缓存
-        header
+       强制缓存: Cache-Control:public, expires
+       协商缓存: Last-Modified
     2. 服务器本地缓存（不利于可伸缩)
     3. 反向代理服务器缓存
         Nginx, CDN缓存

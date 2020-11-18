@@ -31,23 +31,10 @@ addEventListener
 
 4. postMessage
 
-# Event loop
-JS 队列， 异步代码移到不同Task，执行完队列执行异步Task
-1. microtask & macrotask (ES6: jobs & task)
-microtask: process.nextTick, promise, Objectobserve
-macrotask: script, setTimeout, UI rendering
-
-2. 顺序
-    1. script
-    2. 队列栈空 -> microtask
-    3. macrotask
-DOM操作放入微任务
-
-# NodeJS的Event Loop
 
 # 存储
 1. Cookie           携带在header，影响性能
-    value加密，http-only（防止XSS)，secure(只在HTTPS请求)，same-site（不能跨域，防止CSRF)
+   value加密，http-only（防止XSS)，secure(只在HTTPS请求)，same-site（不能跨域，防止CSRF)
 2. LocalStorage     手动清除
 3. sessionStorage   页面关闭清除
 4. Service Worker（代理）

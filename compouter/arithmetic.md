@@ -59,7 +59,7 @@ function swap(array, left, right) {
     for (let i = array.length - 1; i > 0; i--) {
         // 从 0 到 `length - 1` 遍历
         for (let j = 0; j < i; j++) {
-        if (array[j] > array[j + 1]) swap(array, j, j + 1)
+            if (array[j] > array[j + 1]) swap(array, j, j + 1)
         }
     }
     return array;
@@ -70,12 +70,12 @@ function swap(array, left, right) {
     时间复杂度O(n * n)
     ```js
     function insertion(array) {
-    checkArray(array);
-    for (let i = 1; i < array.length; i++) {
-        for (let j = i - 1; j >= 0 && array[j] > array[j + 1]; j--)
-        swap(array, j, j + 1);
-    }
-    return array;
+        checkArray(array);
+        for (let i = 1; i < array.length; i++) {
+            for (let j = i - 1; j >= 0 && array[j] > array[j + 1]; j--)
+            swap(array, j, j + 1);
+        }
+        return array;
     }
     ```
 3. 选择排序

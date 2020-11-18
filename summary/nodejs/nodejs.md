@@ -87,6 +87,19 @@ settimeout, settimeinterval, setImmediate, process.NextTick
     2. event, setImmediate当前队列立即执行
     3. settimeout/interval下个队列
     4. process.NextTick 下次遍历
+
+    timers (settimeout/interval) -> 
+    pending callbacks (下个循环迭代的io回调) -> 
+    idle, prepare（系统libuv调用 -> 
+    poll（轮询） -> 
+    check（setImmediater回调 -> 
+    close callbacks（关闭回调函数on("close")
+
+    异步非阻塞io
+    nodejs -> (JS) -> libuv -> (读取事件) -> 事件队列
+                            -> (发起io，调用回调方法) -> 系统线程池
+                            -> 轮询
+    返回结果       <-        <- 调用回调
     
 5. Buffer
     处理二进制数据，如图片，map3, 数据库文件，支持编码
@@ -119,3 +132,14 @@ settimeout, settimeinterval, setImmediate, process.NextTick
 ## webpack与hapijs
 1. hapijs抽象了NodeJS API，比如表单，error handle。 express需要对应中间件body parser
 2. hapiJS 插件加配置形式，更多的配置，比如路由、身份验证、日志等。更适合大型应用
+
+
+### 面试题
+1. module 就是对象
+2. require机制
+    计算路径、判断缓存、加载模块、输出exports
+3. __dirname => module.load传递来的
+4. exports.xxx = 和module.exports = {}区别。 后者更灵活，可以赋值函数和数组
+5. 异步io
+    ticker 循环检查事件（观察者模式）
+    流程：
