@@ -6,6 +6,7 @@
 
 2. 常见loader（解析非js文件）
     1. babel-loader, css-loader, eslint-loader
+
 3. 常见plugins（扩展webpack功能，监听webpack生命周期事件）
     define-plugin定义环境变量。common-chunk, uglifyis压缩代码
 

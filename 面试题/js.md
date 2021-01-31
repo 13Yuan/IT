@@ -10,7 +10,7 @@ Person.Property = Animal.Property Person.Property.constructor = 'Person'
 2. 构造器
 function Person(){  Animal.call(this) }
 3. 多重继承、属性复制
-for in 
+for in
 
 # 数据类型
 undefined, null, string

@@ -5,7 +5,7 @@
 Element: JSX
 Component: 函数类，返回Element
 
-3. Class & FUnctional Component
+3. Class & Functional Component
 包含内部状态和生命周期，用class
 
 4. Refs
@@ -81,7 +81,7 @@ react性能优化
 	shouldUpdateComponent, PureComponent
 	使用prod版本react
 	使用key
-	
+
 虚拟Dom
 	js对象表示dom树结构，利用diff算法更新视图
 	

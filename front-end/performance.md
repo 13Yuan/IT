@@ -105,4 +105,21 @@ http2.0解决：
 9. cache
     ETag, expires
 
+# react
 
+利用 Performance 进行通用性能分析，利用 React Profiler 进行 React 定制性能分析
+
+1. DevTool Profiler / React.Profiler API(需要埋点损耗性能)
+2. Tracing API
+3. DevTool Performance
+    Puppeteer模拟page.click, 利用page.tracing记录性能变化，上传到devtool performace
+    1. FPS: 每秒帧数
+    2. CPU: CPU消耗
+    3. NET: 网络消耗
+    4. HEAP: 内存水位。借助持续监控上报，分析
+
+    Timing:
+    1. FP: First Paint第一次绘制
+    2. FCP：First Content Paint 第一次内容绘制
+    3. LCP：Largest Content Paint 最大内容绘制
+    4. DCL: DOM内容加载完毕
